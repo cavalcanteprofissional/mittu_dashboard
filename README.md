@@ -72,11 +72,68 @@ mittu_dashboard/
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| **Streamlit** | 1.53.1 | Web application framework |
-| **Pandas** | 2.3.3 | Data processing & analysis |
-| **Plotly** | 5.24.1 | Interactive visualizations |
-| **NumPy** | 1.26.4 | Numerical operations |
-| **Poetry** | 1.8.0 | Dependency management |
+| **Streamlit** | >=1.53.0 | Web application framework |
+| **Pandas** | >=2.0.0 | Data processing & analysis |
+| **Plotly** | >=5.0.0 | Interactive visualizations |
+| **NumPy** | >=1.20.0 | Numerical operations |
+| **Poetry** | 1.8.0 | Local dependency management |
+
+## 🚀 Deployment
+
+### Streamlit Cloud Deployment
+This repository includes deployment-optimized `requirements.txt` for Streamlit Cloud:
+
+```bash
+# Dependencies for deployment (requirements.txt)
+streamlit>=1.53.0
+pandas>=2.0.0
+plotly>=5.0.0
+numpy>=1.20.0
+```
+
+### Local Development
+Use Poetry for local development:
+
+```bash
+# Local development with Poetry
+poetry install
+poetry run streamlit run dashboard.py
+```
+
+### Deployment Requirements
+- **Python Version**: 3.11+ (recommended for Streamlit Cloud compatibility)
+- **requirements.txt**: Minimal dependencies for faster deployment
+- **pyproject.toml**: Full dependency specification for local development
+
+## 🛠️ Development
+
+### Adding New Dependencies
+
+1. **For Local Development**:
+   ```bash
+   poetry add package_name
+   ```
+
+2. **For Deployment**:
+   Add to `requirements.txt` with compatible versions
+
+3. **Update Both**:
+   - Add via Poetry
+   - Export simplified version to requirements.txt
+   - Test deployment compatibility
+
+### Environment Management
+
+```bash
+# Check Poetry environment
+poetry env info
+
+# Update dependencies
+poetry update
+
+# Test requirements locally
+pip install -r requirements.txt
+```
 
 ## 📋 Data Schema
 
